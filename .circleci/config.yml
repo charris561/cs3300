@@ -1,19 +1,20 @@
 # Use the latest 2.1 version of CircleCI pipeline process engine.
 # See: https://circleci.com/docs/2.0/configuration-reference
 version: 2.1
-
+orbs:
+  browser-tools: circleci/browser-tools@1.2.3
 jobs:
   build:
     docker:
       - image: 'tghastings/code-esaas'
-    working_directory: /cs3300
     steps:
+      - browser-tools/install-browser-tools
       - checkout
       - run:
           name: rspec
           command: bundle install && bundle exec rake db:migrate RAILS_ENV=test && bundle exec rspec
       - store_artifacts:
-          path: /cs3300/coverage
+          path: /root/cs3300/coverage
           destination: index.html
 
 # Invoke jobs via workflows
