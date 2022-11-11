@@ -12,6 +12,9 @@ jobs:
       - run:
           name: install rspec
           command: gem install rspec
+      - run: 
+          name: testRspec
+          command: rspec
       - run:
           name: rspec
           command: bundle install && bundle exec rake db:migrate RAILS_ENV=test && bundle exec rspec
