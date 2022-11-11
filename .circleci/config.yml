@@ -11,7 +11,7 @@ jobs:
       - checkout
       - run:
           name: rspec
-          command: cd cs3300 && bundle install && bundle exec rake db:migrate RAILS_ENV=test && bundle exec rspec
+          command: pwd && bundle install && bundle exec rake db:migrate RAILS_ENV=test && bundle exec rspec
       - store_artifacts:
           path: /root/cs3300/coverage
           destination: index.html
