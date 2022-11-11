@@ -12,7 +12,7 @@ jobs:
       - run:
           name: rspec
           command: bundle install && bundle exec rake db:migrate RAILS_ENV=test && bundle exec rspec
-      -store_artifacts:
+      - store_artifacts:
         path: /cs3300/coverage
         destination: index.html
 
