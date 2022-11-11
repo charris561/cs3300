@@ -6,7 +6,7 @@ jobs:
   build:
     docker:
       - image: 'tghastings/code-esaas:latest'
-    working_directory: /cs3300
+    working_directory: /root/cs3300
     steps:
       - checkout
       - run:
