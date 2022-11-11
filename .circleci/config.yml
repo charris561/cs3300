@@ -10,14 +10,8 @@ jobs:
     steps:
       - checkout
       - run:
-          name: install rspec
-          command: gem install rspec
-      - run: 
-          name: testRspec
-          command: bundle install && rspec
-      - run:
           name: rspec
-          command: bundle install && bundle exec rake db:migrate RAILS_ENV=test && bundle exec rspec
+          command: cd cs3300 && bundle install && bundle exec rake db:migrate RAILS_ENV=test && bundle exec rspec
       - store_artifacts:
           path: /root/cs3300/coverage
           destination: index.html
