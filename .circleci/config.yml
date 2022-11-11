@@ -11,7 +11,7 @@ jobs:
           name: rspec
           command: bundle install && bundle exec rake db:migrate RAILS_ENV=test && bundle exec rspec
       - store_artifacts:
-          path: /root/cs3300/coverage
+          path: /cs3300/coverage
           destination: index.html
 
 # Invoke jobs via workflows
