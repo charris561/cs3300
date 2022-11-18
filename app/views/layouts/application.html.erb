@@ -12,9 +12,9 @@
 
   <body>
     <header>
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
+      <%= render 'layouts/alerts' %>
     </header>
+    <%= render 'user/session_manager' %>
     <%= yield %>
   </body>
 </html>
