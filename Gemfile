@@ -67,6 +67,9 @@ group :development, :test do
   #capybara
   gem "capybara"
 
+  # Factory bot for mocking objects for testing: https://github.com/thoughtbot/factory_bot_rails
+  gem "factory_bot_rails"
+
 end
 
 group :development do
