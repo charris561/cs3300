@@ -2,10 +2,13 @@
 # See: https://circleci.com/docs/2.0/configuration-reference
 version: 2.1
 
+orbs:
+  heroku: circleci/heroku@1.2.6
+
 jobs:
   build:
     docker:
-      - image: 'tghastings/code-esaas:latest'
+      - image: 'tghastings/code-esaas'
     working_directory: /root/cs3300
     steps:
       - checkout
@@ -15,6 +18,12 @@ jobs:
       - store_artifacts:
           path: /root/cs3300/coverage
           destination: index.html
+    deploy:
+      executor: heroku/default
+      steps:
+        - checkout
+        - heroku/install
+        -heroku/deploy-via-git
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
@@ -23,3 +32,6 @@ workflows:
     # Inside the workflow, you define the jobs you want to run.
     jobs:
       - build
+      - deploy:
+          requires:
+            - build
