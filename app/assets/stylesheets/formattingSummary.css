@@ -1,0 +1,14 @@
+.slightTopPadding {
+  padding-top:5px
+}
+
+.topPadding {
+    padding-top:2em
+  }
+
+.summary {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    overflow: hidden;
+  }

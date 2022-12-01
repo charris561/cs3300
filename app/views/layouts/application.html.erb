@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Cs3300</title>
+    <title>CS3300</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -12,9 +13,8 @@
 
   <body>
     <header>
-      <%= render 'layouts/alerts' %>
+      <%= render 'layouts/main_header' %>
     </header>
-    <%= render 'user/session_manager' %>
     <%= yield %>
   </body>
 </html>
