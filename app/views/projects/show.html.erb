@@ -1,10 +1,14 @@
-<p style="color: green"><%= notice %></p>
-
-<%= render @project %>
-
-<div>
-  <%= link_to "Edit this project", edit_project_path(@project) %> |
-  <%= link_to "Back to projects", projects_path %>
-
-  <%= button_to "Destroy this project", @project, method: :delete %>
-</div>
+<figure class="text-center">
+  <p style="color: green"><%= notice %></p>
+  <p class="topPadding"></p>
+  <div class="container">
+    <div class="card">
+      <p class="slightTopPadding"></p>
+      <%= render @project %>
+    </div>
+    <p class="topPadding"></p>
+    <%= link_to "Edit this project", edit_project_path(@project), class:"btn btn-primary mb-3" %>
+    <%= link_to "Back to projects", projects_path, class:"btn btn-primary mb-3" %>
+    <%= button_to "Destroy this project", @project, method: :delete, class:"btn btn-danger mb-3" %>
+  </div>
+</figure>

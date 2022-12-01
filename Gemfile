@@ -27,6 +27,9 @@ gem "jbuilder"
 # Devise to implement user authentication
 gem "devise"
 
+# Bootstrap to beautify the website
+gem 'bootstrap', '5.2.2'
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 group :production do
