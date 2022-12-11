@@ -7,8 +7,12 @@
       <%= render @project %>
     </div>
     <p class="topPadding"></p>
-    <%= link_to "Edit this project", edit_project_path(@project), class:"btn btn-primary mb-3" %>
-    <%= link_to "Back to projects", projects_path, class:"btn btn-primary mb-3" %>
-    <%= button_to "Destroy this project", @project, method: :delete, class:"btn btn-danger mb-3" %>
+    <% if current_user %>
+      <%= link_to "Edit this project", edit_project_path(@project), class:"btn btn-primary mb-3" %>
+      <%= link_to "Back to projects", projects_path, class:"btn btn-primary mb-3" %>
+      <%= button_to "Destroy this project", @project, method: :delete, class:"btn btn-danger mb-3" %>
+    <% else %>
+      <%= link_to "Back to projects", projects_path, class:"btn btn-primary mb-3" %>
+    <% end %>
   </div>
 </figure>

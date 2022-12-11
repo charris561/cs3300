@@ -51,10 +51,10 @@ RSpec.feature "Projects", type: :feature do
   context "Remove existing project" do
     let!(:project) { Project.create(title: "Test title", description: "Test content") }
     scenario "remove project" do
-      visit projects_path
-      click_link "Show this project"
       testUser = FactoryBot.create(:user)
       login_as(testUser)
+      visit projects_path
+      click_link "Show this project"
       click_button "Destroy this project"
       expect(page).to have_content("Project was successfully destroyed")
       expect(Project.count).to eq(0)
