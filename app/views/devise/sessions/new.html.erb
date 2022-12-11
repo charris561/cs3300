@@ -1,3 +1,11 @@
+<header>
+  <% if flash.alert %>
+    <div class="alert alert-danger alert-dismissable fade show" role="alert">
+      <%= flash.alert %>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  <% end %>
+</header>
 <p class="topPadding"></p>
 <div class="container">
   <figure class="text-center">
